@@ -34,7 +34,7 @@ public class creacionDietaController {
 	  
 		  dDAO.createDieta(new Dieta(IDdieta,NombreDieta,TipoDieta));
 	  
-		  //App.setRoot("dietista");
+		  App.setRoot("dietista");
 	  
 	  
 	  }

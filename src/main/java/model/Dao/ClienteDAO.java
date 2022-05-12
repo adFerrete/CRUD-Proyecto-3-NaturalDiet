@@ -2,9 +2,9 @@ package model.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
-
+import java.util.ArrayList;
 import interfacesDAO.IClienteDAO;
 import model.DataObject.Clientes;
 import model.DataObject.Dieta;
@@ -55,11 +55,42 @@ public class ClienteDAO implements IClienteDAO{
 	}
 
 	@Override
-	public Collection<Clientes> getAllClientes() {
+	public ArrayList<Clientes> getAllClientes() {
 		
+		ResultSet res;
 		
+		ArrayList<Clientes> lista=new ArrayList<>();
 		
-		return null;
+		String sql="select * from clientes";
+		
+		try {
+			PreparedStatement ps=miConexion.prepareCall(sql);
+			
+			 res=ps.executeQuery();
+			
+			while(res.next()) {
+				
+				Clientes clientes=new Clientes();
+				clientes.setDni(res.getString("Dni"));
+				clientes.setNombre(res.getString("nombre"));
+				clientes.setApellidos("Apellidos");
+				clientes.setEdad(res.getInt("Edad"));
+				clientes.setAltura(res.getInt("Altura"));
+				clientes.setPeso(res.getFloat("peso"));
+				clientes.setGenero(res.getString("genero"));
+				clientes.setMotivoDieta(res.getString("MotivoDieta"));
+				clientes.setAlergiaAlimentaria("alergiaAlimentaria");
+				clientes.setIdDieta(res.getInt("idDieta"));
+				clientes.setDietista(res.getString("Dietista_a_cargo"));
+				
+				lista.add(clientes);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Bloque catch generado automáticamente
+			e.printStackTrace();
+		}
+		return lista;
 	}
 
 	@Override
@@ -70,7 +101,25 @@ public class ClienteDAO implements IClienteDAO{
 
 	@Override
 	public boolean delete(Clientes c) {
-		// TODO Esbozo de método generado automáticamente
+		
+
+		boolean valid=false;
+		
+		String sql="delete from clientes where Dni=?";
+		
+		try {
+			PreparedStatement ps=miConexion.prepareStatement(sql);
+			ps.setString(1, c.getDni());
+
+			ps.executeUpdate();
+			valid=true;
+		} catch (SQLException e) {
+			// TODO Bloque catch generado automáticamente
+			e.printStackTrace();
+			
+		}
+		
+		
 		return false;
 	}
 

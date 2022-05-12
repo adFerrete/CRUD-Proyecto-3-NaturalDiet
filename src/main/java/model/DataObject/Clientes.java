@@ -29,6 +29,12 @@ public class Clientes {
 		this.idDieta = idDieta;
 		this.dietista=dietista;
 	}
+	
+	public Clientes(String dni) {
+		
+		this.dni=dni;
+		
+	}
 
 	public Clientes() {
 		super();

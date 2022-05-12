@@ -50,7 +50,7 @@ public class CreacionClienteController{
 
 	
 	@FXML
-	public void CreacionCliente() {
+	public void CreacionCliente() throws IOException {
 
 		if (Dni != null && Nombre != null && Apellidos != null && Edad != null && Altura != null && Peso != null
 				&& MotivoDieta != null && Alergia != null && Dieta != null && Dietista != null && Genero != null) {
@@ -78,8 +78,15 @@ public class CreacionClienteController{
 			cDAO.createDietista(new Clientes(dni, nombre, apellidos, ConverEdad, ConverAltura, ConverPeso, genero, motivoDieta,
 						alergia, ConverDieta, dietista));
 			
+			App.setRoot("dietista");
+			
 		}
 
-	} 
+	}
+	
+	@FXML
+    private void switchToDietista() throws IOException {
+	   App.setRoot("dietista");
+    }
 
 }

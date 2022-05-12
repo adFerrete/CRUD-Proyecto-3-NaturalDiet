@@ -39,5 +39,6 @@
       <Label layoutX="509.0" layoutY="172.0" text="cm" />
       <Label layoutX="270.0" layoutY="209.0" text="Kg" />
       <Button layoutX="509.0" layoutY="346.0" mnemonicParsing="false" onAction="#CreacionCliente" text="crear" />
+      <Button layoutX="35.0" layoutY="39.0" mnemonicParsing="false" onAction="#switchToDietista" text="volver" />
    </children>
 </AnchorPane>
