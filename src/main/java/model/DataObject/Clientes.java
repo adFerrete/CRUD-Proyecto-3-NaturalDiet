@@ -35,7 +35,7 @@ public class Clientes {
 		this.dni=dni;
 		
 	}
-
+	
 	public Clientes() {
 		super();
 	}
@@ -86,7 +86,7 @@ public class Clientes {
 		return peso;
 	}
 
-	public void setPeso(float peso) {
+	public void setPeso(double peso) {
 		this.peso = peso;
 	}
 

@@ -75,7 +75,7 @@ public class CreacionClienteController{
 
 			ClienteDAO cDAO = new ClienteDAO();
 
-			cDAO.createDietista(new Clientes(dni, nombre, apellidos, ConverEdad, ConverAltura, ConverPeso, genero, motivoDieta,
+			cDAO.createCliente(new Clientes(dni, nombre, apellidos, ConverEdad, ConverAltura, ConverPeso, genero, motivoDieta,
 						alergia, ConverDieta, dietista));
 			
 			App.setRoot("dietista");

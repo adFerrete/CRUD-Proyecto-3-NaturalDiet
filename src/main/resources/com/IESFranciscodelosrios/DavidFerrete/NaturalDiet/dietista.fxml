@@ -4,10 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.IESFranciscodelosrios.DavidFerrete.NaturalDiet.DietistaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.IESFranciscodelosrios.DavidFerrete.NaturalDiet.DietistaController">
    <children>
       <Button layoutX="58.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToCreacionCliente" text="Crear Cliente" />
       <Button layoutX="168.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToCreacionDieta" text="Crear Dieta" />
@@ -29,5 +30,38 @@
       <TextField fx:id="eliminacion" layoutX="306.0" layoutY="43.0" prefHeight="25.0" prefWidth="123.0" />
       <Button layoutX="440.0" layoutY="43.0" mnemonicParsing="false" onAction="#eliminacionCliente" text="eliminar" />
       <Label layoutX="306.0" layoutY="14.0" text="introducir DNI para eliminar al cliente" />
+      <Label layoutX="59.0" layoutY="309.0" text="DNI" />
+      <TextField fx:id="dni_mod" layoutX="90.0" layoutY="305.0" prefHeight="25.0" prefWidth="106.0" />
+      <Label layoutX="25.0" layoutY="350.0" text="Nombre" />
+      <TextField fx:id="nombre_mod" layoutX="76.0" layoutY="346.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="177.0" layoutY="346.0" mnemonicParsing="false" onAction="#updateName" text="Modificar" />
+      <Label layoutX="22.0" layoutY="384.0" text="Apellidos" />
+      <TextField fx:id="apellidos_mod" layoutX="76.0" layoutY="380.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="177.0" layoutY="380.0" mnemonicParsing="false" onAction="#updateApellidos" text="Modificar" />
+      <Label layoutX="33.0" layoutY="418.0" text="Edad" />
+      <TextField fx:id="edad_mod" layoutX="76.0" layoutY="414.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="177.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateEdad" text="Modificar" />
+      <Label layoutX="268.0" layoutY="333.0" text="Altura" />
+      <TextField fx:id="altura_mod" layoutX="315.0" layoutY="329.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="414.0" layoutY="329.0" mnemonicParsing="false" onAction="#updateAltura" text="Modificar" />
+      <Label layoutX="271.0" layoutY="368.0" text="Peso" />
+      <TextField fx:id="peso_mod" layoutX="315.0" layoutY="364.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="414.0" layoutY="364.0" mnemonicParsing="false" onAction="#updatePeso" text="Modificar" />
+      <Label layoutX="265.0" layoutY="405.0" text="Genero" />
+      <TextField fx:id="genero_mod" layoutX="315.0" layoutY="401.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="414.0" layoutY="401.0" mnemonicParsing="false" onAction="#updategenero" text="Modificar" />
+      <Label layoutX="211.0" layoutY="456.0" text="Motivo de la dieta" />
+      <TextArea fx:id="motivo_mod" layoutX="317.0" layoutY="434.0" prefHeight="60.0" prefWidth="131.0" />
+      <Button layoutX="448.0" layoutY="468.0" mnemonicParsing="false" onAction="#updateMotivoDieta" text="Modificar" />
+      <Label layoutX="544.0" layoutY="350.0" text="Alergia alimentaria" />
+      <TextField fx:id="alergia_mod" layoutX="652.0" layoutY="346.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="751.0" layoutY="346.0" mnemonicParsing="false" onAction="#updateAlergia" text="Modificar" />
+      <Label layoutX="551.0" layoutY="384.0" text="Dieta asociada" />
+      <TextField fx:id="dieta_mod" layoutX="652.0" layoutY="380.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="751.0" layoutY="380.0" mnemonicParsing="false" onAction="#eliminacionCliente" text="Modificar" />
+      <Label layoutX="551.0" layoutY="418.0" text="Dietista asociado" />
+      <TextField fx:id="dietista_mod" layoutX="652.0" layoutY="414.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="751.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateIdDieta" text="Modificar" />
+      <Button layoutX="758.0" layoutY="468.0" mnemonicParsing="false" onAction="#updateAll" text="Modificar todo" />
    </children>
 </AnchorPane>
