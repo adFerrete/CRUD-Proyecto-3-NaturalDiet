@@ -10,8 +10,13 @@ import javafx.scene.control.TextArea;
 import model.Dao.ClienteDAO;
 import model.DataObject.Clientes;
 
-public class CreacionClienteController{
+/*
+ * Esta clase es el controlador para crear un cliente.
+ */
+public class CreacionClienteController {
 
+	//cada una de estas variables pertenecen a los textField que se usan para poder setear el registro 
+	
 	@FXML
 	TextField Genero;
 	
@@ -46,9 +51,11 @@ public class CreacionClienteController{
 	TextField Dietista;
 	
 	
-
-
-	
+/*
+ * En este método se recogen los datos del cliente introducido por el usuario obteniendo lo que hay 
+ * en los textField y seteándolo al objeto.
+ * @throws IOException
+ */
 	@FXML
 	public void CreacionCliente() throws IOException {
 
@@ -84,9 +91,12 @@ public class CreacionClienteController{
 
 	}
 	
+	
+	//este metodo es para cambiar de escena. el botón de volver hace uso de este método.
 	@FXML
     private void switchToDietista() throws IOException {
 	   App.setRoot("dietista");
     }
 
 }
+

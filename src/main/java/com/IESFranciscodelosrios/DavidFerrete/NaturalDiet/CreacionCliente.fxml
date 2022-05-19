@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #59B542;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.IESFranciscodelosrios.DavidFerrete.NaturalDiet.CreacionClienteController">
+   <children>
+      <Button layoutX="28.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToDietista" style="-fx-background-color: blue;" text="volver" textFill="WHITE" />
+      <Label layoutX="120.0" layoutY="39.0" text="Creación del cliente">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="119.0" text="DNI:" />
+      <TextField fx:id="Dni" layoutX="110.0" layoutY="115.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="53.0" layoutY="159.0" text="Nombre:" />
+      <TextField fx:id="Nombre" layoutX="110.0" layoutY="155.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="54.0" layoutY="192.0" text="Apellidos:" />
+      <TextField fx:id="Apellidos" layoutX="110.0" layoutY="188.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="66.0" layoutY="228.0" text="Edad:" />
+      <TextField fx:id="Edad" layoutX="110.0" layoutY="224.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="66.0" layoutY="265.0" text="Altura:" />
+      <TextField fx:id="Altura" layoutX="110.0" layoutY="261.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="251.0" layoutY="119.0" text="Peso:" />
+      <TextField fx:id="Peso" layoutX="287.0" layoutY="115.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="244.0" layoutY="159.0" text="Genero:" />
+      <TextField fx:id="Genero" layoutX="287.0" layoutY="155.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="217.0" layoutY="201.0" text="Motivo de la dieta" />
+      <TextArea fx:id="MotivoDieta" layoutX="320.0" layoutY="184.0" prefHeight="58.0" prefWidth="162.0" />
+      <Label layoutX="200.0" layoutY="253.0" text="Alergia alimentaria:" />
+      <TextField fx:id="Alergia" layoutX="302.0" layoutY="249.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="217.0" layoutY="286.0" text="Dieta asociada:" />
+      <TextField fx:id="Dieta" layoutX="302.0" layoutY="282.0" prefHeight="25.0" prefWidth="84.0" />
+      <Label layoutX="217.0" layoutY="325.0" text="Dietista asociado:" />
+      <TextField fx:id="Dietista" layoutX="320.0" layoutY="321.0" prefHeight="25.0" prefWidth="84.0" />
+      <Button layoutX="488.0" layoutY="342.0" mnemonicParsing="false" onAction="#CreacionCliente" style="-fx-background-color: blue;" text="crear" textFill="WHITE" />
+   </children>
+</AnchorPane>

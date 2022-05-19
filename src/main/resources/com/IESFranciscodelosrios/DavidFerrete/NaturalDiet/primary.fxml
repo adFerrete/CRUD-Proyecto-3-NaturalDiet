@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.IESFranciscodelosrios.DavidFerrete.NaturalDiet.PrimaryController">
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.IESFranciscodelosrios.DavidFerrete.NaturalDiet.PrimaryController">
    <children>
-      <ImageView fitHeight="301.0" fitWidth="414.0" layoutX="255.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../clinica.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="89.0" layoutY="127.0" mnemonicParsing="false" onAction="#switchToInicioSesion" text="Inicio de Sesión" />
-      <Button layoutX="109.0" layoutY="166.0" mnemonicParsing="false" onAction="#switchToRegistro" text="Registro" />
-      <Button layoutX="94.0" layoutY="210.0" mnemonicParsing="false" text="Nutricionistas" />
-      <Button layoutX="114.0" layoutY="250.0" mnemonicParsing="false" text="Cerrar" />
+      <VBox prefHeight="200.0" prefWidth="427.0" style="-fx-background-color: #BBCEB6;" HBox.hgrow="ALWAYS">
+         <children>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToInicioSesion" prefHeight="133.0" prefWidth="325.0" style="-fx-background-color: blue;" text="Iniciar Sesión" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="90.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToRegistro" prefHeight="116.0" prefWidth="327.0" style="-fx-background-color: blue;" text="Registrarse" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets top="80.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="427.0" style="-fx-background-color: #FD9C01;" HBox.hgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="457.0" fitWidth="415.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@../../../../clinica-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
    </children>
-</AnchorPane>
+</HBox>

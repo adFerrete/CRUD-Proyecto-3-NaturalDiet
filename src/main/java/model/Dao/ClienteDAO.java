@@ -95,7 +95,7 @@ public class ClienteDAO implements IClienteDAO{
 
 	@Override
 	public boolean updateAll(Clientes c) {
-		System.out.println(c);
+		
 	boolean valid=false;
 		
 		String sql="Update clientes set nombre=?, Apellidos=?, Edad=?, Altura=?, peso=?, genero=?, MotivoDieta=?, alergiaAlimentaria=?, idDieta=?, Dietista_a_cargo=? Where Dni=?";		
@@ -115,7 +115,7 @@ public class ClienteDAO implements IClienteDAO{
 			ps.setString(11, c.getDni());
 			
 			ps.executeUpdate();
-			System.out.println(ps.toString());
+			
 			valid=true;
 		} catch (SQLException e) {
 			// TODO Bloque catch generado automáticamente
@@ -192,7 +192,7 @@ public class ClienteDAO implements IClienteDAO{
 			ps.setString(2, c.getDni());
 
 			ps.executeUpdate();
-			System.out.println(ps.toString());
+			
 			valid = true;
 		} catch (SQLException e) {
 			// TODO Bloque catch generado automáticamente
@@ -268,7 +268,7 @@ public class ClienteDAO implements IClienteDAO{
 			ps.setString(2, c.getDni());
 
 			ps.executeUpdate();
-			System.out.println(ps.toString());
+			
 			valid = true;
 		} catch (SQLException e) {
 			// TODO Bloque catch generado automáticamente
@@ -293,7 +293,7 @@ public class ClienteDAO implements IClienteDAO{
 			ps.setString(2, c.getDni());
 
 			ps.executeUpdate();
-			System.out.println(ps.toString());
+			
 			valid = true;
 		} catch (SQLException e) {
 			// TODO Bloque catch generado automáticamente
@@ -318,7 +318,7 @@ public class ClienteDAO implements IClienteDAO{
 			ps.setString(2, c.getDni());
 
 			ps.executeUpdate();
-			System.out.println(ps.toString());
+			
 			valid = true;
 		} catch (SQLException e) {
 			// TODO Bloque catch generado automáticamente
@@ -343,7 +343,7 @@ public class ClienteDAO implements IClienteDAO{
 			ps.setString(2, c.getDni());
 
 			ps.executeUpdate();
-			System.out.println(ps.toString());
+			
 			valid = true;
 		} catch (SQLException e) {
 			// TODO Bloque catch generado automáticamente
@@ -356,8 +356,27 @@ public class ClienteDAO implements IClienteDAO{
 
 	@Override
 	public boolean updateDietista(Clientes c) {
-		// TODO Esbozo de método generado automáticamente
-		return false;
+		
+		boolean valid = false;
+
+		String sql = "Update clientes set Dietista_a_cargo=? where Dni=?";
+
+		try {
+			PreparedStatement ps = miConexion.prepareStatement(sql);
+
+			ps.setString(1, c.getDietista());
+			ps.setString(2, c.getDni());
+
+			ps.executeUpdate();
+			
+			valid = true;
+		} catch (SQLException e) {
+			// TODO Bloque catch generado automáticamente
+			e.printStackTrace();
+
+		}
+
+		return valid;
 	}
 
 	@Override

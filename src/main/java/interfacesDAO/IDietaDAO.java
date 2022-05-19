@@ -9,7 +9,7 @@ import model.DataObject.Dieta;
 public interface IDietaDAO {
 
 	boolean createDieta(Dieta d);
-	Collection<Dieta> get();
+	Collection<Dieta> getAllDietas();
 	int updateDieta(Dieta d);
 	boolean delete(Dieta d);
 	

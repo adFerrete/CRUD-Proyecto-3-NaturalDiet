@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import interfacesDAO.IDietaDAO;
+import model.DataObject.Clientes;
 import model.DataObject.Dieta;
 import model.DataObject.Dietista;
 import utils.Connect;
@@ -46,9 +48,36 @@ public class DietaDAO implements IDietaDAO{
 	}
 
 	@Override
-	public Collection<Dieta> get() {
-		// TODO Esbozo de método generado automáticamente
-		return null;
+	public Collection<Dieta> getAllDietas() {
+
+		ResultSet res;
+		
+		ArrayList<Dieta> lista=new ArrayList<>();
+		
+		String sql="select * from dieta";
+		
+		try {
+			PreparedStatement ps=miConexion.prepareCall(sql);
+			
+			 res=ps.executeQuery();
+			
+			while(res.next()) {
+				
+				Dieta dietas=new Dieta();
+				dietas.setIdDieta(res.getInt("idDieta"));
+				dietas.setNombre(res.getString("Nombre"));
+				dietas.setTipoDieta(res.getString("TipoDieta"));
+				
+				lista.add(dietas);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Bloque catch generado automáticamente
+			e.printStackTrace();
+		}
+			
+		
+		return lista;
 	}
 
 	public Dieta getAll() {

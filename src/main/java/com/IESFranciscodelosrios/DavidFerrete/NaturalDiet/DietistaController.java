@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -15,8 +16,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.Dao.ClienteDAO;
 import model.DataObject.Clientes;
 
+/*
+ * este controlador es el más importante ya que pertenece a lo que es el panel de control general de la aplicación donde 
+ * se añaden, eliminan, muestran y actualizan registros mediante el CRUD.
+ */
+
 public class DietistaController implements Initializable{
 	
+	//todas estas variables pertenecen al tableView y a los tableColumns de Scene Builder donde se mostrarán todos los registros de clientes.
 	@FXML
 	private TableView<Clientes> tablaClientes= new TableView<>();
 	
@@ -53,12 +60,14 @@ public class DietistaController implements Initializable{
 	@FXML
 	private TableColumn<Clientes, Integer> dieta_t=new TableColumn<>();
 	
-	
-	
+	//Creo el objeto cDAO para poder llamar a los métodos que trabajan con la base de datos
 	ClienteDAO cDAO=new ClienteDAO();
+	
+	
 	@FXML
 	TextField eliminacion;
 	
+	//estos textField se usan para modificar un registro o un campo de la tabla clientes
 	@FXML
 	TextField dni_mod;
 	
@@ -92,22 +101,32 @@ public class DietistaController implements Initializable{
 	@FXML
 	TextField dietista_mod;
 	
+	//aquí creo una lista observable para poder mostrar todos los clientes
 	private ObservableList<Clientes> list;
+	
+    /*
+     * este metodo se usa para configurar los elementos de Scene builder, aquí yo lo uso para configurar el table view.
+     */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		
-		
+		// para crear un table view funcional primero hay que llamar al metodo observableArrayList de la clase FXCollections .
+
 		list=FXCollections.observableArrayList();
+
 		
+		//2.después hay que hacer un for-each en el que se añadan todos los clientes que se van creando a la lista
 		for(Clientes c: cDAO.getAllClientes()) {
 			
 			list.add(c);
 			
 		}
 		
+		
+		//se setea la lista en la tabla
 		tablaClientes.setItems(list);
 		
+		//por último por cada columna del tableView hay que bindearlo a cada atributo de la clase clientes.
 		DNI_t.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dni"));
 		nombre_t.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
 		apellidos_t.setCellValueFactory(new PropertyValueFactory<Clientes, String>("apellidos"));
@@ -124,7 +143,11 @@ public class DietistaController implements Initializable{
 		
 	}
 	
-	
+	/*
+	 *Este método elimina un cliente por el dni que se introduzca 
+	 *llamando al metodo delete de la clase dao.
+	 * @throws IOException
+	 */
 	public void eliminacionCliente() throws IOException {
 		
 		if(eliminacion!=null) {
@@ -139,6 +162,10 @@ public class DietistaController implements Initializable{
 	
 	}
 	
+	/*
+	 *este método actualiza todos los campos de la tabla cliente introduciendo los datos en los textField de debajo del tableView 
+	 * @throws IOException
+	 */
 	public void updateAll() throws IOException {
 		
 		if(dni_mod!=null && nombre_mod!=null && apellidos_mod!=null && edad_mod!=null && altura_mod!=null && peso_mod!=null 
@@ -169,7 +196,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
-	
+	/*
+	 *Este método actuliza sólo el nombre de un cliente  
+	 */
 	@FXML
 	public void updateName() throws IOException {
 		
@@ -191,6 +220,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	/*
+	 *Este método actuliza sólo el apellido de un cliente  
+	 */
 	@FXML
 	public void updateApellidos() throws IOException {
 		
@@ -212,6 +244,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	/*
+	 *Este método actuliza sólo la edad de un cliente  
+	 */
 	@FXML
 	public void updateEdad() throws IOException {
 		
@@ -234,6 +269,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	/*
+	 *Este método actuliza sólo la altura de un cliente  
+	 */
 	@FXML
 	public void updateAltura() throws IOException {
 		
@@ -256,6 +294,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	/*
+	 *Este método actuliza sólo el peso de un cliente  
+	 */
 	@FXML
 	public void updatePeso() throws IOException {
 		
@@ -278,6 +319,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	/*
+	 *Este método actuliza sólo el género de un cliente  
+	 */
 	@FXML
 	public void updategenero() throws IOException {
 		
@@ -299,6 +343,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	/*
+	 *Este método actuliza sólo el motivo de la dieta de un cliente  
+	 */
 	@FXML
 	public void updateMotivoDieta() throws IOException {
 		
@@ -320,6 +367,10 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	
+	/*
+	 *Este método actuliza sólo la alergia alimentaria de un cliente  
+	 */
 	@FXML
 	public void updateAlergia() throws IOException {
 		
@@ -341,6 +392,9 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	/*
+	 *Este método actuliza sólo el id de dieta asociada al cliente de un cliente  
+	 */
 	@FXML
 	public void updateIdDieta() throws IOException {
 		
@@ -363,16 +417,54 @@ public class DietistaController implements Initializable{
 		
 	}
 	
+	
+	/*
+	 *Este método actuliza sólo el dietista que atiende al cliente  
+	 */
+	@FXML
+	public void updateDietista() throws IOException {
+		
+		Clientes c=new Clientes();
+		
+		if(dni_mod!=null && dietista_mod!=null) {
+			
+			String dni = dni_mod.getText();
+			String dietista= dietista_mod.getText();
+			
+			c.setDni(dni);
+			c.setDietista(dietista);
+			
+			cDAO.updateDietista(c);
+			
+			App.setRoot("dietista");
+			
+		}
+		
+	}
+	
+	/*
+	 * cambia a la ventana de creación de un cliente y se usa en el botón llamado crear cliente
+	 */
 	@FXML
 	 private void switchToCreacionCliente() throws IOException {
 	   App.setRoot("creacionCliente");
 	 }
 
+	/*
+	 *  cambia a la ventana de creación de una dieta y se usa en el botón llamado crear dieta
+	 */
 	 @FXML
 	    private void switchToCreacionDieta() throws IOException {
 		   App.setRoot("creacionDieta");
 	    }
-
+	 
+	 /*
+	  * cabia a la ventana donde se inicia sesión y se usa en el botón de volver.
+	  */
+	 @FXML
+	    private void switchToInicioSesion() throws IOException {
+		   App.setRoot("InicioSesion");
+	    }
 	
 
 }

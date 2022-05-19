@@ -8,10 +8,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.IESFranciscodelosrios.DavidFerrete.NaturalDiet.DietistaController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #59B542;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.IESFranciscodelosrios.DavidFerrete.NaturalDiet.DietistaController">
    <children>
-      <Button layoutX="58.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToCreacionCliente" text="Crear Cliente" />
-      <Button layoutX="168.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToCreacionDieta" text="Crear Dieta" />
+      <Button layoutX="58.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToCreacionCliente" style="-fx-background-color: blue;" text="Crear Cliente" textFill="WHITE" AnchorPane.leftAnchor="58.0" />
+      <Button layoutX="158.0" layoutY="43.0" mnemonicParsing="false" onAction="#switchToCreacionDieta" style="-fx-background-color: blue;" text="Crear Dieta" textFill="WHITE" AnchorPane.leftAnchor="158.0" />
       <TableView fx:id="tablaClientes" layoutX="14.0" layoutY="83.0" prefHeight="200.0" prefWidth="829.0">
         <columns>
           <TableColumn fx:id="DNI_t" prefWidth="75.0" text="DNI" />
@@ -24,44 +24,45 @@
             <TableColumn fx:id="motivoDieta_t" prefWidth="75.0" text="Motivo Dieta" />
             <TableColumn fx:id="alergia_t" prefWidth="75.0" text="Alergia alimentaria" />
             <TableColumn fx:id="dieta_t" prefWidth="75.0" text="Dieta Asociada" />
-            <TableColumn fx:id="d" prefWidth="75.0" text="Dietista" />
+            <TableColumn fx:id="dietista_t" prefWidth="75.0" text="Dietista" />
         </columns>
       </TableView>
-      <TextField fx:id="eliminacion" layoutX="306.0" layoutY="43.0" prefHeight="25.0" prefWidth="123.0" />
-      <Button layoutX="440.0" layoutY="43.0" mnemonicParsing="false" onAction="#eliminacionCliente" text="eliminar" />
-      <Label layoutX="306.0" layoutY="14.0" text="introducir DNI para eliminar al cliente" />
+      <TextField fx:id="eliminacion" layoutX="306.0" layoutY="43.0" prefHeight="25.0" prefWidth="123.0" AnchorPane.leftAnchor="306.0" />
+      <Button layoutX="423.0" layoutY="43.0" mnemonicParsing="false" onAction="#eliminacionCliente" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: blue;" text="eliminar" textFill="WHITE" />
+      <Label layoutX="306.0" layoutY="14.0" text="introducir DNI para eliminar al cliente" AnchorPane.topAnchor="14.0" />
       <Label layoutX="59.0" layoutY="309.0" text="DNI" />
       <TextField fx:id="dni_mod" layoutX="90.0" layoutY="305.0" prefHeight="25.0" prefWidth="106.0" />
       <Label layoutX="25.0" layoutY="350.0" text="Nombre" />
       <TextField fx:id="nombre_mod" layoutX="76.0" layoutY="346.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="177.0" layoutY="346.0" mnemonicParsing="false" onAction="#updateName" text="Modificar" />
+      <Button layoutX="177.0" layoutY="346.0" mnemonicParsing="false" onAction="#updateName" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="22.0" layoutY="384.0" text="Apellidos" />
       <TextField fx:id="apellidos_mod" layoutX="76.0" layoutY="380.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="177.0" layoutY="380.0" mnemonicParsing="false" onAction="#updateApellidos" text="Modificar" />
+      <Button layoutX="177.0" layoutY="380.0" mnemonicParsing="false" onAction="#updateApellidos" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="33.0" layoutY="418.0" text="Edad" />
       <TextField fx:id="edad_mod" layoutX="76.0" layoutY="414.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="177.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateEdad" text="Modificar" />
+      <Button layoutX="177.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateEdad" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="268.0" layoutY="333.0" text="Altura" />
       <TextField fx:id="altura_mod" layoutX="315.0" layoutY="329.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="414.0" layoutY="329.0" mnemonicParsing="false" onAction="#updateAltura" text="Modificar" />
+      <Button layoutX="414.0" layoutY="329.0" mnemonicParsing="false" onAction="#updateAltura" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="271.0" layoutY="368.0" text="Peso" />
       <TextField fx:id="peso_mod" layoutX="315.0" layoutY="364.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="414.0" layoutY="364.0" mnemonicParsing="false" onAction="#updatePeso" text="Modificar" />
+      <Button layoutX="414.0" layoutY="364.0" mnemonicParsing="false" onAction="#updatePeso" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="265.0" layoutY="405.0" text="Genero" />
       <TextField fx:id="genero_mod" layoutX="315.0" layoutY="401.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="414.0" layoutY="401.0" mnemonicParsing="false" onAction="#updategenero" text="Modificar" />
+      <Button layoutX="414.0" layoutY="401.0" mnemonicParsing="false" onAction="#updategenero" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="211.0" layoutY="456.0" text="Motivo de la dieta" />
       <TextArea fx:id="motivo_mod" layoutX="317.0" layoutY="434.0" prefHeight="60.0" prefWidth="131.0" />
-      <Button layoutX="448.0" layoutY="468.0" mnemonicParsing="false" onAction="#updateMotivoDieta" text="Modificar" />
+      <Button layoutX="448.0" layoutY="468.0" mnemonicParsing="false" onAction="#updateMotivoDieta" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="544.0" layoutY="350.0" text="Alergia alimentaria" />
       <TextField fx:id="alergia_mod" layoutX="652.0" layoutY="346.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="751.0" layoutY="346.0" mnemonicParsing="false" onAction="#updateAlergia" text="Modificar" />
+      <Button layoutX="751.0" layoutY="346.0" mnemonicParsing="false" onAction="#updateAlergia" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="551.0" layoutY="384.0" text="Dieta asociada" />
       <TextField fx:id="dieta_mod" layoutX="652.0" layoutY="380.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="751.0" layoutY="380.0" mnemonicParsing="false" onAction="#eliminacionCliente" text="Modificar" />
+      <Button layoutX="751.0" layoutY="380.0" mnemonicParsing="false" onAction="#updateIdDieta" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
       <Label layoutX="551.0" layoutY="418.0" text="Dietista asociado" />
       <TextField fx:id="dietista_mod" layoutX="652.0" layoutY="414.0" prefHeight="25.0" prefWidth="106.0" />
-      <Button layoutX="751.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateIdDieta" text="Modificar" />
-      <Button layoutX="758.0" layoutY="468.0" mnemonicParsing="false" onAction="#updateAll" text="Modificar todo" />
+      <Button layoutX="751.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateDietista" style="-fx-background-color: blue;" text="Modificar" textFill="WHITE" />
+      <Button layoutX="758.0" layoutY="468.0" mnemonicParsing="false" onAction="#updateAll" style="-fx-background-color: blue;" text="Modificar todo" textFill="WHITE" />
+      <Button layoutX="21.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToInicioSesion" style="-fx-background-color: blue;" text="volver" textFill="WHITE" />
    </children>
 </AnchorPane>

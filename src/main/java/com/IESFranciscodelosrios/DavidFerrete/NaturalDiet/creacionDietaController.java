@@ -9,7 +9,12 @@ import model.Dao.DietistaDAO;
 import model.DataObject.Dieta;
 import model.DataObject.Dietista;
 
+/*
+ * Esta clase es el controlador para crear una dieta.
+ */
 public class creacionDietaController {
+	
+	//cada una de estas variables pertenecen a los textField que se usan para poder setear el registro 
 	
 	@FXML
 	TextField idDieta;
@@ -20,6 +25,11 @@ public class creacionDietaController {
 	@FXML
 	TextField tipoDieta;
 
+	/*
+	 * En este método se recogen los datos de la dieta introducida por el usuario obteniendo lo que hay 
+	 * en los textField y seteándolo al objeto.
+	 * @throws IOException
+	 */
 	@FXML 
 	public void creacionDieta() throws IOException{
 	  
